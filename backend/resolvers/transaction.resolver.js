@@ -39,20 +39,25 @@ const transactionResolver = {
         throw new Error("Error creating transaction");
       }
     },
-    updateTransaction: async (_, { input }) => {
+    updateTransaction: async (_, {input}) => {
       try {
-        const newTransaction = new Transaction({
-          ...input,
-          userId: context.getUser()._id,
-        });
-        await newTransaction.save();
-        return newTransaction;
+        const updatedTransaction = await Transaction.findByIdAndUpdate(input.transactionId, input, {new: true});
+        return updatedTransaction;
       } catch (err) {
         console.error("Error updating transaction: ", err);
         throw new Error("Error updating transaction");
       }
     },
-    deleteTransaction: async (_, { transactionId }, context) => {},
+    deleteTransaction: async (_, { transactionId }, context) => {
+      try {
+        const deletedTransaction = await Transaction.findByIdAndDelete(transactionId);
+        return deletedTransaction;
+      } catch (err) {
+        console.error("Error deleting transaction: ", err);
+        throw new Error("Error deleting transaction");
+      }
+    },
+    // TODO: => IMPLEMENT transaction/user relationship
   },
 };
 
