@@ -48,7 +48,7 @@ const transactionResolver = {
         throw new Error("Error updating transaction");
       }
     },
-    deleteTransaction: async (_, { transactionId }, context) => {
+    deleteTransaction: async (_, { transactionId }) => {
       try {
         const deletedTransaction = await Transaction.findByIdAndDelete(transactionId);
         return deletedTransaction;
