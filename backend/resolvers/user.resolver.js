@@ -67,7 +67,7 @@ const userResolver = {
         context.res.clearCookie("connect.sid");
 
         return { message: "Logged out successfully" };
-      } catch (error) {
+      } catch (err) {
         console.error("Error in logout: ", err);
         throw new Error(err.message || "Internal server error");
       }
