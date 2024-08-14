@@ -50,3 +50,8 @@ npx tailwindcss init
 npm install graphql@16.8.1 @apollo/client@3.9.5 react-router-dom@6.22.1 react-icons@5.0.1 react-hot-toast@2.4.1 tailwind-merge@2.2.1 @tailwindcss/aspect-ratio@0.4.2 clsx@2.1.0 chart.js@4.4.1 react-chartjs-2@5.2.0 mini-svg-data-uri@1.4.4 framer-motion@11.0.6
 ```
 
+### Visual Studio Code Plugins
+
+- GraphQL: Language Feature Support
+- GraphQL: Syntax Highlighting
+- ES7+ React/Redux/React-Native snippets
