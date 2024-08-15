@@ -4,10 +4,11 @@ import LoginPage from "./pages/LoginPage"
 import SignUpPage from "./pages/SignUpPage"
 import TransactionPage from "./pages/TransactionPage"
 import NotFoundPage from "./pages/NotFoundPage"
-
+import Header from "./components/ui/Header"
 function App() {
   return (
     <>
+    <Header />
     <Routes>
       <Route path="/" element={< HomePage />} />
       <Route path="/login" element={< LoginPage />} />
